@@ -1,0 +1,23 @@
+<h1>Add an item to your list</h1>
+
+<p>
+  <%= form_for(@item) do |form| %>
+  <p>
+    <%= form.label(:name) %><br>
+    <%= form.text_field(:name) %>
+  </p>
+  <p>
+    <%= form.label(:quantity) %><br>
+    <%= form.text_field(:quantity) %>
+  </p>
+  <%= form.submit("Add item to list") %>
+  <% end %>
+
+  <ul>
+    <% for message in @item.errors.full_messages %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+</p>
+
+<a href="/grocery">Full list</a>
