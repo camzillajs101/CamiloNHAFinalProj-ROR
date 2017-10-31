@@ -1,0 +1,20 @@
+<center><h1>GROCERY LSIT</h1>
+
+<table style="width:50%;">
+  <tr>
+    <th>Name</th>
+    <th>Quantity</th>
+  </tr>
+  <% for grocery in @list do %>
+    <tr>
+      <td><%= link_to grocery.name, grocery %></td>
+      <td><%= link_to grocery.quantity, grocery %></td>
+    </tr>
+  <% end %>
+</table>
+<br></br>
+
+<%= button_to "Clear the list", {action: :destroy_all}, {method: :delete} %>
+<%= button_to "Add to this list", {action: :new}, {method: :get} %><br>
+</center>
+</span>
